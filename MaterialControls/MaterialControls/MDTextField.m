@@ -412,6 +412,7 @@
   [_errorView setTextColor:_errorColor];
   [_errorView setHidden:YES];
 
+    
   _characterCountView = [[UILabel alloc]
       initWithFrame:CGRectMake(self.bounds.size.width - 50, 77, 50, 15)];
   [_characterCountView setFont:_labelsFont];
@@ -760,6 +761,14 @@
   _textView.secureTextEntry = secureTextEntry;
 }
 
+- (void)setErrorRtl:(BOOL)errorRtl {
+    _errorRtl = errorRtl;
+    
+    if(_errorRtl == YES)
+        [_errorView setTextAlignment:NSTextAlignmentRight];
+    
+}
+
 - (void)setReturnKeyType:(UIReturnKeyType)returnKeyType {
   _returnKeyType = returnKeyType;
   _textField.returnKeyType = returnKeyType;
@@ -921,7 +930,7 @@
             addObjectsFromArray:
                 [NSLayoutConstraint
                     constraintsWithVisualFormat:
-                        [NSString stringWithFormat:@"H:|-%i-[errorView]",
+                        [NSString stringWithFormat:@"H:|-%i-[errorView]-|",
                                                    kMDZeroPadding]
                                         options:0
                                         metrics:nil

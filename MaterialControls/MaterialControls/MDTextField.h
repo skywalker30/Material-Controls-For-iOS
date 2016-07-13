@@ -78,6 +78,8 @@ IB_DESIGNABLE
 @property(nonatomic) IBInspectable BOOL floatingLabel;
 @property(nonatomic) IBInspectable BOOL highlightLabel;
 @property(null_unspecified, nonatomic) IBInspectable NSString *errorMessage;
+@property(nonatomic) IBInspectable BOOL errorRtl;
+
 @property(nonatomic) IBInspectable NSInteger maxCharacterCount;
 
 @property(null_unspecified, nonatomic) IBInspectable UIColor *normalColor;
