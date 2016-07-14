@@ -767,6 +767,14 @@
     
 }
 
+- (void)setHintRtl:(BOOL)hintRtl {
+    _hintRtl = hintRtl;
+    
+    if(_hintRtl == YES)
+        [_labelView setTextAlignment:NSTextAlignmentRight];
+    
+}
+
 - (void)setReturnKeyType:(UIReturnKeyType)returnKeyType {
   _returnKeyType = returnKeyType;
   _textField.returnKeyType = returnKeyType;
@@ -1130,17 +1138,18 @@
         [NSValue valueWithCGPoint:_labelPlaceHolder.frame.origin];
 
     CAAnimationGroup *groupAnimation = [CAAnimationGroup animation];
-    groupAnimation.duration = kMDLabelAnimationDuration;
+    groupAnimation.duration = 1.0f;
     groupAnimation.timingFunction =
         [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
     [groupAnimation setValue:kMDLabelMoveUpAnimationKey forKey:@"id"];
     groupAnimation.removedOnCompletion = false;
     groupAnimation.fillMode = kCAFillModeForwards;
     groupAnimation.animations =
-        [NSArray arrayWithObjects:scaleAnim, moveAnim, nil];
+        [NSArray arrayWithObjects: scaleAnim, moveAnim, nil];
 
     groupAnimation.delegate = self;
 
+      
     [_labelView.layer addAnimation:groupAnimation forKey:nil];
   }
 }
