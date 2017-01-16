@@ -23,10 +23,10 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, MDTextFieldViewState) {
-  MDTextFieldViewStateNormal,
-  MDTextFieldViewStateHighlighted,
-  MDTextFieldViewStateError,
-  MDTextFieldViewStateDisabled
+    MDTextFieldViewStateNormal,
+    MDTextFieldViewStateHighlighted,
+    MDTextFieldViewStateError,
+    MDTextFieldViewStateDisabled
 };
 
 NS_ASSUME_NONNULL_BEGIN
@@ -40,32 +40,32 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)textFieldDidChange:(MDTextField *)textField;
 
 - (BOOL)textFieldShouldBeginEditing:
-    (MDTextField *)textField; // return NO to disallow editing.
+(MDTextField *)textField; // return NO to disallow editing.
 - (void)textFieldDidBeginEditing:
-    (MDTextField *)textField; // became first responder
+(MDTextField *)textField; // became first responder
 - (BOOL)textFieldShouldEndEditing:
-    (MDTextField *)textField; // return YES to allow editing to stop and to
-                              // resign first responder status. NO to
-                              // disallow the editing session to end
+(MDTextField *)textField; // return YES to allow editing to stop and to
+// resign first responder status. NO to
+// disallow the editing session to end
 - (void)textFieldDidEndEditing:(MDTextField *)textField; // may be called if
-                                                         // forced even if
-                                                         // shouldEndEditing
-                                                         // returns NO (e.g.
-                                                         // view removed from
-                                                         // window) or
-                                                         // endEditing:YES
-                                                         // called
+// forced even if
+// shouldEndEditing
+// returns NO (e.g.
+// view removed from
+// window) or
+// endEditing:YES
+// called
 
 - (BOOL)textField:(MDTextField *)textField
-    shouldChangeCharactersInRange:(NSRange)range
-                replacementString:
-                    (NSString *)string; // return NO to not change text
+shouldChangeCharactersInRange:(NSRange)range
+replacementString:
+(NSString *)string; // return NO to not change text
 
 //- (BOOL)textFieldShouldClear:(MDTextField *)textField;               // called
 // when clear button pressed. return NO to ignore (no notifications)
 - (BOOL)textFieldShouldReturn:
-    (MDTextField *)
-        textField; // called when 'return' key pressed. return NO to ignore.
+(MDTextField *)
+textField; // called when 'return' key pressed. return NO to ignore.
 
 @end
 
@@ -80,6 +80,7 @@ IB_DESIGNABLE
 @property(null_unspecified, nonatomic) IBInspectable NSString *errorMessage;
 @property(nonatomic) IBInspectable BOOL errorRtl;
 @property(nonatomic) IBInspectable BOOL hintRtl;
+@property(nonatomic) IBInspectable BOOL textRtl;
 
 @property(nonatomic) IBInspectable NSInteger maxCharacterCount;
 
