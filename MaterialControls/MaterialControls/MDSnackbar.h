@@ -50,6 +50,7 @@ IB_DESIGNABLE
 @property(nonatomic) BOOL multiline;
 @property(nonatomic) CGFloat maxWidth;
 @property(nonatomic, readonly) BOOL isShowing;
+@property(nonatomic) BOOL textRtl;
 
 - (instancetype)initWithText:(NSString *)text actionTitle:(NSString *)action;
 - (instancetype)initWithText:(NSString *)text

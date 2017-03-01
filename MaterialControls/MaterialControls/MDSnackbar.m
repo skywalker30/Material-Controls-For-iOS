@@ -345,6 +345,17 @@ MDSnackbarManger *snackbarManagerInstance;
   }
 }
 
+- (void)setTextRtl:(BOOL)textRtl {
+    _textRtl = textRtl;
+    
+    if(_textRtl == YES)
+        [textLabel setTextAlignment:NSTextAlignmentRight];
+    else
+        [textLabel setTextAlignment:NSTextAlignmentLeft];
+    
+}
+
+
 #pragma mark public methods
 - (void)addTarget:(id)target action:(SEL)aSelector {
   [actionButton addTarget:target
