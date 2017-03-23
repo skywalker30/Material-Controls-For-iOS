@@ -398,7 +398,7 @@
                       initWithFrame:CGRectMake(0, 67, self.bounds.size.width, 2)];
     if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1)
         [_dividerHolder setLayoutMargins:UIEdgeInsetsMake(0, 0, 0, 0)];
-    [_dividerHolder setNormalColor:_normalColor];
+    [_dividerHolder setNormalColor: [UIColorHelper colorWithRGBA:kMDTextFieldDividedColor]];
     [_dividerHolder setHighlightColor:_highlightColor];
     [_dividerHolder setErrorColor:_errorColor];
     [_dividerHolder setNormalHeight:kMDDividerHeight];

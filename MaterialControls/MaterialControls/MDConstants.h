@@ -40,7 +40,8 @@
 #define kMDProgressTrackColor @"#B4CFEE"
 
 #pragma mark TextField
-#define kMDTextFieldNormalColor @"#00000042"
+#define kMDTextFieldNormalColor @"#3c3c3c"
+#define kMDTextFieldDividedColor @"#646464"
 #define kMDTextFieldHighlightColor kMDColorPrimary500
 #define kMDTextFieldErrorColor kMDColorAccent200
 #define kMDTextFieldTextColor @"#000000DD"
