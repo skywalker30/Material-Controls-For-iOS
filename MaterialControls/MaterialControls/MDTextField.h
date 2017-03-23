@@ -74,6 +74,7 @@ IB_DESIGNABLE
 @interface MDTextField : UIControl
 
 @property(null_unspecified, nonatomic) IBInspectable NSString *hint;
+@property(null_unspecified, nonatomic) IBInspectable NSString *accessibilityLabel;
 @property(null_unspecified, nonatomic) IBInspectable NSString *label;
 @property(nonatomic) IBInspectable BOOL floatingLabel;
 @property(nonatomic) IBInspectable BOOL highlightLabel;

@@ -761,6 +761,17 @@
     _textView.secureTextEntry = secureTextEntry;
 }
 
+
+
+- (void)setAccessibilityLabel:(NSString*)accessibilityLabel {
+    
+    _accessibilityLabel = accessibilityLabel;
+    [_textField setAccessibilityLabel:accessibilityLabel];
+    [_labelView setIsAccessibilityElement:NO];
+    
+    
+}
+
 - (void)setErrorRtl:(BOOL)errorRtl {
     _errorRtl = errorRtl;
     
