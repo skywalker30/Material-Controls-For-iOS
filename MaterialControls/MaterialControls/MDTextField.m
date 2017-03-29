@@ -83,6 +83,28 @@
     return caretRect;
 }
 
+
+
+- (void)accessibilityElementDidBecomeFocused {
+    
+    
+    if(self.delegate != nil &&
+       [self.delegate isKindOfClass:[MDTextField class]] == YES) {
+        
+        MDTextField *delegate = (MDTextField*)self.delegate;
+        
+        if(delegate.hasError) {
+            
+            
+            UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, [NSString stringWithFormat:@"%@, %@",delegate.errorMessage, NSLocalizedString(@"AccessibilitySdeMelel", nil)]);
+            
+        }
+    }
+    
+}
+
+
+
 - (void)drawPlaceholderInRect:(CGRect)rect {
     if ([self.placeholder
          respondsToSelector:@selector(drawInRect:
@@ -362,6 +384,7 @@
     return self;
 }
 
+
 - (void)initContent {
     if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1)
         [self setLayoutMargins:UIEdgeInsetsMake(0, 0, 0, 0)];
@@ -411,6 +434,7 @@
     [_errorView setFont:_labelsFont];
     [_errorView setTextColor:_errorColor];
     [_errorView setHidden:YES];
+    [_errorView setIsAccessibilityElement:NO];
     
     
     _characterCountView = [[UILabel alloc]
