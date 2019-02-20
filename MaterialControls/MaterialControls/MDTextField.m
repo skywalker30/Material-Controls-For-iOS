@@ -801,6 +801,8 @@
     
     if(_errorRtl == YES)
         [_errorView setTextAlignment:NSTextAlignmentRight];
+    else
+        [_errorView setTextAlignment:NSTextAlignmentLeft];
     
 }
 
@@ -809,6 +811,8 @@
     
     if(_hintRtl == YES)
         [_labelView setTextAlignment:NSTextAlignmentRight];
+    else
+        [_labelView setTextAlignment:NSTextAlignmentLeft];
     
 }
 
