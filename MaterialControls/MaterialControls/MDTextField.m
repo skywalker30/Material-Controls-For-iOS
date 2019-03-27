@@ -412,10 +412,12 @@
     [_labelView setTextColor:_normalColor];
     [_labelView setNumberOfLines:1];
     [_labelView.layer setAnchorPoint:CGPointMake(0, 0)];
+//    [_labelView setBackgroundColor:UIColor.redColor];
     
     _labelPlaceHolder =
     [[UIView alloc] initWithFrame:CGRectMake(0, 16, self.bounds.size.width,
                                              _labelsFont.lineHeight)];
+//    [_labelPlaceHolder setBackgroundColor:UIColor.greenColor];
     
     _dividerHolder = [[DividerView alloc]
                       initWithFrame:CGRectMake(0, 67, self.bounds.size.width, 2)];
@@ -520,7 +522,7 @@
                                                           stringWithFormat:@"V:[labelHolder(%i)]",
                                                           (int)ceil(
                                                                     _labelView.font
-                                                                    .lineHeight)]
+                                                                    .lineHeight + 4)]
                              options:0
                              metrics:nil
                              views:viewsDictionary];
