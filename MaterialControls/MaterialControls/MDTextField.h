@@ -82,6 +82,7 @@ IB_DESIGNABLE
 @property(nonatomic) IBInspectable BOOL errorRtl;
 @property(nonatomic) IBInspectable BOOL hintRtl;
 @property(nonatomic) IBInspectable BOOL textRtl;
+@property(nonatomic) IBInspectable BOOL oneTimeCode;
 
 @property(nonatomic) IBInspectable NSInteger maxCharacterCount;
 

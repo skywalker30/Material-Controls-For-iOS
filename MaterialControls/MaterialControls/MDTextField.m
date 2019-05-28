@@ -828,6 +828,17 @@
     
 }
 
+- (void)setOneTimeCode:(BOOL)oneTimeCode {
+    _oneTimeCode = oneTimeCode;
+        
+    if (@available(iOS 12.0, *)) {
+        [_textField setTextContentType:UITextContentTypeOneTimeCode];
+    } else {
+        // Fallback on earlier versions
+    }
+   
+}
+
 
 - (void)setReturnKeyType:(UIReturnKeyType)returnKeyType {
     _returnKeyType = returnKeyType;
