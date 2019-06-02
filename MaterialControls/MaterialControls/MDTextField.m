@@ -832,9 +832,9 @@
     _oneTimeCode = oneTimeCode;
         
     if (@available(iOS 12.0, *)) {
-        [_textField setTextContentType:UITextContentTypeOneTimeCode];
-    } else {
-        // Fallback on earlier versions
+        
+        if(oneTimeCode == YES)
+            [_textField setTextContentType:UITextContentTypeOneTimeCode];
     }
    
 }
